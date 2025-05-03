@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import image from '../assets/left-panel-img.jpg'
 import Signin from './Signin'
+import './Signin.css'
 const Login = () => {
+  const [login, setLogin] = useState(false)
+  if (login){
+    return <Signin />
+  }
     return (
         <div className='sign-in-body'>
           <div className='left-panel'>
@@ -30,7 +35,9 @@ const Login = () => {
               <br />
     
               <button>Login</button>
-                <p className='login'>Don't have an Account? <span>Sign Up</span></p>
+                <p className='login'>Don't have an Account? <span onClick = {()=>{
+                  setLogin(true)
+                }}>Sign Up</span></p>
             </div>
     
         </div>

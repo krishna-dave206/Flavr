@@ -2,12 +2,16 @@ import React, {useRef, useState} from 'react'
 import './Signin.css'
 import img from '../assets/left-panel-img.jpg'
 import Login from './Login.jsx'
-
+import Homepage from './Homepage.jsx'
 
 const Signin = () => {
   const password1 = useRef();
   const password2 = useRef();
   const [click, setClick]  = useState(false)
+  const [homepage, setHomepage] = useState(false)
+  if (homepage){
+    return <Homepage />
+  }
   if (click){
     return <Login />
   }
@@ -40,7 +44,8 @@ const Signin = () => {
 
           <button onClick={()=>{
             if(password1.current.value === password2.current.value){
-              console.log("Signup successful") 
+              console.log("Signup successful")
+              setHomepage(true)
 
             }
             else{
