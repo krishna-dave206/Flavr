@@ -2,7 +2,7 @@ import React from 'react'
 
 const Upload = () => {
   return (
-    <div>Upload</div>
+    <div>This is upload</div>
   )
 }
 

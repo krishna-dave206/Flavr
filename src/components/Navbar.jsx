@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -9,17 +10,17 @@ const Navbar = () => {
                 <div className='nav-logo'>
                     <li className='nav-item'>Flavr</li>
                 </div>
-                <a href="/Flavr/">
+                <Link to="/">
                     <li className='nav-item'>HOME</li>
-                </a>
+                </Link>
                 <li className='nav-item'>EXPLORE</li>
-                <a href="/#/upload">
+                <Link to="/upload">
                     <li className='nav-item' id='upload'> + UPLOAD</li>
-                </a>
+                </Link>
             </ul>
             <div className="profile">
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/002/387/693/small_2x/user-profile-icon-free-vector.jpg" alt="Profile" className='profile-img' />
-                <div className='profile-name'>Jason</div>
+                <div className='profile-name'>User</div>
             </div>
 
         </div>

@@ -28,7 +28,6 @@
 .nav-item:hover{
     color: #090909;
     scale: 1.1;
-    text-decoration: underline;
 }
 ul{
     display: flex;
