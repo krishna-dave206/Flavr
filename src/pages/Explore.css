@@ -1,0 +1,41 @@
+.explore-banner {
+    margin: 20px auto;
+    text-align: center;
+    color: black;
+}
+.explore-banner img {
+    width: 250px;
+    height: 280px;
+    border-radius: 10px;
+}
+.explore-content {
+    display: grid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+.explore-recipes {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+    padding: 10px;
+    transition: transform 0.2s;
+    height: 100%;
+}
+.recipe-grid:hover {
+    transform: translateY(-4px);
+}
+.explore-recipes img {
+    width:50%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 2px;
+}

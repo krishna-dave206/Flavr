@@ -20,6 +20,9 @@ const Navbar = () => {
                 <Link to="/upload">
                     <li className='nav-item' id='upload'> + UPLOAD</li>
                 </Link>
+                <Link to="/login">
+                    <li className='nav-item'>LOGIN</li>
+                </Link>
             </ul>
             <div className="profile">
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/002/387/693/small_2x/user-profile-icon-free-vector.jpg" alt="Profile" className='profile-img' />

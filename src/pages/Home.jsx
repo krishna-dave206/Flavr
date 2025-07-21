@@ -51,17 +51,13 @@ const Home = () => {
           <div key={meal.id} className="meal-card">
           <img src={meal.image} alt={meal.title} />
           <h3 style={{textAlign:'center'}}>{meal.title}</h3>
-        
+          
           <div className="bottom-info">
             <p>
-              Ready in {meal.readyInMinutes} mins • Servings: {meal.servings}
+              Ready in {meal.readyInMinutes} mins
             </p>
             <a
-              href={`https://spoonacular.com/recipes/${meal.title
-                .toLowerCase()
-                .replace(/ /g, "-")}-${meal.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`https://spoonacular.com/recipes/${meal.title.replace(/\s+/g, '-').toLowerCase()}-${meal.id}`}
             >
               View Recipe
             </a>
