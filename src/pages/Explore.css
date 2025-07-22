@@ -1,41 +1,60 @@
-.explore-banner {
-    margin: 20px auto;
+.explore-container {
+    padding: 20px;
+  }
+  
+  .explore-container h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     text-align: center;
-    color: black;
-}
-.explore-banner img {
-    width: 250px;
-    height: 280px;
-    border-radius: 10px;
-}
-.explore-content {
-    display: grid;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 10px;
-}
-.explore-recipes {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+  }
+  
+  .masonry-grid {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #eee;
+    margin-left: -15px; 
+    width: auto;
+  }
+  
+  .masonry-grid_column {
+    padding-left: 15px; 
+    background-clip: padding-box;
+  }
+  
+  .masonry-card {
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    background-color: white;
-    padding: 10px;
-    transition: transform 0.2s;
-    height: 100%;
-}
-.recipe-grid:hover {
-    transform: translateY(-4px);
-}
-.explore-recipes img {
-    width:50%;
-    height: 180px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .masonry-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .masonry-card img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
     object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 2px;
-}
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+  
+  .masonry-card:hover .overlay {
+    opacity: 1;
+  }
+  

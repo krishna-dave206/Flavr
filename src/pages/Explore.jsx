@@ -1,46 +1,53 @@
-import React from 'react'
-import './Explore.css';
+// src/pages/Explore.js
+import React, { useEffect, useState } from "react";
+import Masonry from "react-masonry-css";
+import "./Explore.css"; 
 
 const Explore = () => {
+  const [meals, setMeals] = useState([]);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      try {
+        const response = await fetch(
+          `https://api.spoonacular.com/recipes/random?number=100&apiKey=4ad2e542576143a89d9405d5cb9bd509`
+        );
+        const data = await response.json();
+        setMeals(data.recipes);
+      } catch (error) {
+        console.error("Error fetching recipes:", error);
+      }
+    };
+
+    fetchMeals();
+  }, []);
+
+  const breakpoints = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
+
   return (
-    <div>
-      <div className="explore-banner">
-        <h1>
-          Explore the World of Culinary Delights
-          <br />
-          Discover Recipes from Around the Globe
-        </h1>
-        <img
-          src="https://i.pinimg.com/736x/af/93/3e/af933e60b17982f1077dbcffc9cf6e9b.jpg"
-          alt="Explore"
-        />
-      </div>
-
-      <div className="explore-content">
-        <p>
-          Dive into a vast collection of recipes, each crafted to bring you a taste of different cultures and cuisines. Whether you're looking for quick meals or gourmet dishes, we've got something for everyone!
-        </p>
-      </div>
-      
-      <div className="explore-recipes">
-        <h2>Featured Recipes</h2>
-        <div className="recipe-grid">
-          {/* Placeholder for recipe cards */}
-          <div className="recipe-card">
-            <img src="https://i.pinimg.com/736x/af/93/3e/af933e60b17982f1077dbcffc9cf6e9b.jpg" alt="Recipe 1" />
-            <h3>Recipe 1</h3>
-            <p>Delicious and easy to make!</p>
+    <div className="explore-container">
+      <h2>Explore more Recipes</h2>
+      <Masonry
+        breakpointCols={breakpoints}
+        className="masonry-grid"
+        columnClassName="masonry-grid_column"
+      >
+        {meals.map((meal) => (
+          <div key={meal.id} className="masonry-card">
+            <img src={meal.image} alt={meal.title} />
+            <div className="overlay">
+              <h3>{meal.title}</h3>
+            </div>
           </div>
-          <div className="recipe-card">
-            <img src="https://i.pinimg.com/736x/af/93/3e/af933e60b17982f1077dbcffc9cf6e9b.jpg" alt="Recipe 2" />
-            <h3>Recipe 2</h3>
-            <p>Amazing flavors in every bite!</p>
-          </div>
-          {/* Add more recipe cards as needed */}
-        </div>
-        </div>
+        ))}
+      </Masonry>
     </div>
-  )
-}
+  );
+};
 
-export default Explore
+export default Explore;
